@@ -1,0 +1,10 @@
+.title {
+    @media (max-width: 567px) {
+        font-size: 21px;
+    }
+    font-family: Consolas;
+    font-size: 28px;
+    font-weight: 400;
+    text-align: left;
+    color: rgba(0, 0, 0, 1);
+}

@@ -1,0 +1,81 @@
+@font-face {
+    font-family: "Helevetica";
+    src: url("../fonts/Helvetica/Helvetica-Regular.woff") format("woff");
+    src: url("../fonts/Helvetica/Helvetica-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: Helevetica;
+}
+@font-face {
+    font-family: "ArialMT";
+    src: url("../fonts/ArialMT/ArialMT-Regular.woff") format("woff");
+    src: url("../fonts/ArialMT/ArialMT-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: ArialMT;
+}
+
+.advertisement {
+    .row:nth-of-type(1) {
+        background-color: rgba(237, 237, 237, 1);
+        .wrapper-row {
+            @media (max-width: 1280px) {
+                padding: 0px 20px;
+            }
+            max-width: 610px;
+            margin: 0 auto;
+            .container {
+                @media (max-width: 567px) {
+                    padding: 22px 0px 20px 0px;
+                }
+                padding: 34px 0px 36px 0px;
+                span {
+                    display: block;
+                    font-family: Helvetica;
+                    font-size: 14px;
+                    font-weight: 400;
+                    text-align: left;
+                    margin-bottom: 17px;
+                    a {
+                        text-decoration: underline;
+                        color: rgba(0, 53, 255, 1);
+                    }
+                }
+                .books {
+                    @media (max-width: 767px) {
+                        display: none;
+                    }
+                    width: 100%;
+                }
+                .mobile-books {
+                    @media (max-width: 767px) {
+                        display: block;
+                    }
+                    display: none;
+                    width: 280px;
+                    height: 200px;
+                }
+            }
+        }
+    }
+
+    .row:nth-of-type(2) {
+        .container {
+            @media (max-width: 567px) {
+                padding: 35px 0px 30px 0px;
+            }
+            padding: 45px 0px 74px 0px;
+            .text {
+                @media (max-width: 567px) {
+                    margin-top: 21px;
+                    font-size: 14px;
+                    line-height: 20px;
+                }
+                margin-top: 26px;
+                font-family: ArialMT;
+                font-size: 16px;
+                line-height: 24px;
+                font-weight: 400;
+                text-align: left;
+            }
+        }
+    }
+}
