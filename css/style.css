@@ -320,7 +320,7 @@
 }
 .advertisement .row:nth-of-type(2) .container .text {
   margin-top: 26px;
-  font-family: ArialMT;
+  font-family: ArialMT, Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
@@ -648,6 +648,7 @@
   width: 100%;
   padding: 15px 19px;
   border-radius: 6px;
+  color: rgb(119, 119, 119);
 }
 .feedback .container__feedback .feedback__message .form .column-area .input__field:focus {
   outline: none;
@@ -668,7 +669,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-family: Arial;
+  font-family: ArialMT, Arial, sans-serif;
   font-size: 14px;
   padding: 14px 70px;
   background: rgb(0, 98, 255);
@@ -677,6 +678,7 @@
   color: rgb(255, 255, 255);
   text-transform: uppercase;
   font-weight: 600;
+  letter-spacing: 0.7px;
 }
 
 .title {
