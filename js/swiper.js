@@ -9,11 +9,14 @@ var swiper = new Swiper(".mySwiper", {
     992: {
       slidesPerView: 3,
     },
+    768: {
+      slidesPerView: 3,
+    },
     767: {
-      slidesPerView: 2,
+      slidesPerView: 1,
     },
     576: {
-      slidesPerView: 2,
+      slidesPerView: 1,
     },
     320: {
       slidesPerView: 1,

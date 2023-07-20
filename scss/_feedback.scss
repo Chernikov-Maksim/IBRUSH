@@ -1,24 +1,10 @@
-@font-face {
-    font-family: "Consolas";
-    src: url("../fonts/Consolas/Consolas-Bold.woff") format("woff");
-    src: url("../fonts/Consolas/Consolas-Bold.woff2") format("woff2");
-    font-weight: 700;
-    font-style: Consolas;
-}
-@font-face {
-    font-family: "Consolas";
-    src: url("../fonts/Consolas/Consolas-Regular.woff") format("woff");
-    src: url("../fonts/Consolas/Consolas-Regular.woff2") format("woff2");
-    font-weight: 400;
-    font-style: Consolas;
-}
 .feedback {
     background-color: rgba(237, 237, 237, 1);
     .container__feedback {
         padding: 40px 0;
         .feedback-rating {
             &__group {
-                @media (max-width: 596px) {
+                @media (max-width: 767px) {
                     margin: 15px 0px 20px 0px;
                 }
                 margin: 10px 0px 30px 0px;
@@ -73,8 +59,9 @@
                 margin-bottom: 15px;
             }
             .form {
-                @media (max-width: 596px) {
+                @media (max-width: 767px) {
                     row-gap: 10px;
+                    flex-direction: column;
                 }
                 display: flex;
                 justify-content: space-between;
@@ -212,7 +199,7 @@
                     }
                 }
                 .column__btn {
-                    @media (max-width: 491px) {
+                    @media (max-width: 767px) {
                         width: 100%;
                     }
                     .btn {
@@ -230,6 +217,11 @@
                         text-transform: uppercase;
                         font-weight: 600;
                         letter-spacing: 0.7px;
+                        cursor: pointer;
+                        transition: all 0.3s;
+                    }
+                    .btn:hover {
+                        background: rgb(56, 116, 212);
                     }
                 }
             }
