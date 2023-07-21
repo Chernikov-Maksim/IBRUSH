@@ -685,7 +685,7 @@ body {
 .feedback .container__feedback .feedback__message .form .column label {
   pointer-events: none;
   position: absolute;
-  top: 20px;
+  top: 18px;
   left: 20px;
   color: rgb(119, 119, 119);
   pointer-events: none;
