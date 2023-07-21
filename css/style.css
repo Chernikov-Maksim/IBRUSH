@@ -83,6 +83,36 @@ body {
   font-family: "Montserrat";
 }
 
+@font-face {
+  font-family: "OpenSans";
+  src: url("../fonts/OpenSans/OpenSans-Italic.woff") format("woff"), url("../fonts/OpenSans/OpenSans-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Consolas";
+  src: url("../fonts/Consolas/Consolas-Bold.woff") format("woff"), url("../fonts/Consolas/Consolas-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Consolas";
+  src: url("../fonts/Consolas/Consolas-Regular.woff") format("woff"), url("../fonts/Consolas/Consolas-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ArialMT";
+  src: url("../fonts/ArialMT/ArialMT-Regular.woff") format("woff"), url("../fonts/ArialMT/ArialMT-Regular.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ArialMT";
+  src: url("../fonts/Helvetica/Helvetica-Regular.woff") format("woff"), url("../fonts/Helvetica/Helvetica-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
 .description {
   background-color: rgb(255, 255, 255);
 }
@@ -259,7 +289,8 @@ body {
   .sub-text {
     margin-bottom: 26px;
     width: 100%;
-    white-space: wrap;
+    white-space: normal;
+    overflow: auto;
   }
 }
 
@@ -504,55 +535,103 @@ body {
 .feedback .container__feedback {
   padding: 40px 0;
 }
-.feedback .container__feedback .feedback-rating__group {
-  margin: 10px 0px 30px 0px;
+.feedback .container__feedback .set-condition {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: none;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding: 0;
+  margin-left: -5px;
+}
+.feedback .container__feedback .set-condition__stars-container {
+  width: 160px;
+  height: 24px;
+  margin-bottom: 30px;
+  background-image: url("../img/posts/satarDefolt.svg");
+  background-size: 33px 24px;
+  background-repeat: repeat-x;
+  position: relative;
+  z-index: 0;
 }
 @media (max-width: 767px) {
-  .feedback .container__feedback .feedback-rating__group {
-    margin: 15px 0px 20px 0px;
+  .feedback .container__feedback .set-condition__stars-container {
+    margin-bottom: 20px;
   }
 }
-.feedback .container__feedback .feedback-rating__group > input {
+.feedback .container__feedback .set-condition__result-container {
+  margin-bottom: 5px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+.feedback .container__feedback .set-condition__stars-container input {
   display: none;
 }
-.feedback .container__feedback .feedback-rating__group > input:checked ~ label, .feedback .container__feedback .feedback-rating__group > input + label:hover ~ label, .feedback .container__feedback .feedback-rating__group > input + label:hover {
-  background-image: url("../img/posts/atarDefolt.svg");
+.feedback .container__feedback .set-condition__stars-container label {
+  height: 24px;
+  background-size: 33px 24px;
+  background-repeat: repeat-x;
+  position: absolute;
+  left: 0;
+  top: 0;
+  cursor: pointer;
 }
-.feedback .container__feedback .feedback-rating__group label {
-  display: block;
-  width: 25px;
-  height: 25px;
+.feedback .container__feedback .set-condition__stars-container label:nth-of-type(1) {
+  width: 33px;
+  z-index: 5;
+}
+.feedback .container__feedback .set-condition__stars-container label:nth-of-type(2) {
+  width: 66px;
+  z-index: 4;
+}
+.feedback .container__feedback .set-condition__stars-container label:nth-of-type(3) {
+  width: 99px;
+  z-index: 3;
+}
+.feedback .container__feedback .set-condition__stars-container label:nth-of-type(4) {
+  width: 132px;
+  z-index: 2;
+}
+.feedback .container__feedback .set-condition__stars-container label:nth-of-type(5) {
+  width: 165px;
+  z-index: 1;
+}
+.feedback .container__feedback .set-condition__stars-container label:hover,
+.feedback .container__feedback .set-condition__stars-container input:checked + label {
   background-image: url("../img/posts/starActive.svg");
-  background-size: 100%;
-  background-repeat: no-repeat;
-}
-.feedback .container__feedback .feedback-rating__group label:not(:first-child) {
-  margin-right: 10px;
-}
-.feedback .container__feedback .feedback-rating__group > input[id=rating-5]:checked ~ label {
-  background-image: url("../img/posts/starActive.svg");
-}
-.feedback .container__feedback .feedback-rating__group > input[id=rating-5]:not(:checked) ~ label:hover, .feedback .container__feedback .feedback-rating__group > input[id=rating-5]:not(:checked) ~ label:hover ~ label {
-  background-image: url("../img/posts/atarDefolt.svg");
+  -webkit-transition: all 0.4s ease-out;
+  -o-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
 }
 .feedback .container__feedback .feedback__star {
   font-family: Consolas;
   font-size: 18px;
   font-weight: 700;
+  margin-bottom: 10px;
+}
+@media (max-width: 767px) {
+  .feedback .container__feedback .feedback__star {
+    margin-bottom: 15px;
+  }
 }
 .feedback .container__feedback .feedback__message .feedback__title {
   font-family: Consolas;
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 15px;
+}
+@media (max-width: 767px) {
+  .feedback .container__feedback .feedback__message .feedback__title {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
 }
 .feedback .container__feedback .feedback__message .form {
   display: -webkit-box;
@@ -578,15 +657,14 @@ body {
   height: 56px;
   position: relative;
 }
-@media (max-width: 491px) {
+@media (max-width: 767px) {
   .feedback .container__feedback .feedback__message .form .column {
     width: 100%;
   }
 }
 .feedback .container__feedback .feedback__message .form .column input {
   min-width: 226px;
-  height: 56px;
-  padding: 26px 0px 9px 20px;
+  padding: 26px 20px 9px 20px;
   border-radius: 6px;
   outline: none;
   background-color: #ffffff;
@@ -599,15 +677,15 @@ body {
 }
 .feedback .container__feedback .feedback__message .form .column input:focus ~ label,
 .feedback .container__feedback .feedback__message .form .column input:valid ~ label {
-  -webkit-transform: translateY(-8px);
-      -ms-transform: translateY(-8px);
-          transform: translateY(-8px);
+  -webkit-transform: translateY(-12px);
+      -ms-transform: translateY(-12px);
+          transform: translateY(-12px);
   font-size: 14px;
 }
 .feedback .container__feedback .feedback__message .form .column label {
   pointer-events: none;
   position: absolute;
-  top: 18px;
+  top: 20px;
   left: 20px;
   color: rgb(119, 119, 119);
   pointer-events: none;
@@ -636,8 +714,8 @@ body {
   font-family: ArialMT;
   font-size: 14px;
   background: rgb(255, 255, 255);
-  border: 1px solid rgb(255, 255, 255);
-  color: rgb(119, 119, 119);
+  border: 2px solid rgb(127, 127, 127);
+  color: rgb(34, 34, 34);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -650,15 +728,12 @@ body {
   padding: 18px 20px;
   border-radius: 6px;
   cursor: pointer;
-  -webkit-transition: background 0.3s;
-  -o-transition: background 0.3s;
-  transition: background 0.3s;
+}
+.feedback .container__feedback .feedback__message .form .selected {
+  color: rgb(119, 119, 119);
 }
 .feedback .container__feedback .feedback__message .form .select-clicked {
   color: rgb(34, 34, 34);
-}
-.feedback .container__feedback .feedback__message .form .select:hover {
-  border: 1px solid rgb(127, 127, 127);
 }
 .feedback .container__feedback .feedback__message .form .caret {
   width: 10px;
@@ -703,6 +778,17 @@ body {
 }
 .feedback .container__feedback .feedback__message .form .active {
   background: rgb(237, 237, 237);
+  position: relative;
+  color: black;
+}
+.feedback .container__feedback .feedback__message .form .active::before {
+  content: "";
+  position: absolute;
+  background: rgb(0, 98, 255);
+  width: 7px;
+  height: 100%;
+  left: 0;
+  top: 0;
 }
 .feedback .container__feedback .feedback__message .form .menu-open {
   display: block;
@@ -724,6 +810,10 @@ body {
   padding: 15px 19px;
   border-radius: 6px;
   color: rgb(119, 119, 119);
+  font-family: ArialMT;
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: 0px;
 }
 .feedback .container__feedback .feedback__message .form .column-area .input__field:focus {
   outline: none;

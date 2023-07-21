@@ -2,57 +2,96 @@
     background-color: rgba(237, 237, 237, 1);
     .container__feedback {
         padding: 40px 0;
-        .feedback-rating {
-            &__group {
-                @media (max-width: 767px) {
-                    margin: 15px 0px 20px 0px;
-                }
-                margin: 10px 0px 30px 0px;
-                display: flex;
-                align-items: center;
-                border: none;
-                padding: 0;
-
-                & > input {
-                    display: none;
-
-                    &:checked ~ label,
-                    & + label:hover ~ label,
-                    & + label:hover {
-                        background-image: url("../img/posts/atarDefolt.svg");
-                    }
-                }
-
-                label {
-                    display: block;
-                    width: 25px;
-                    height: 25px;
-
-                    background-image: url("../img/posts/starActive.svg");
-                    background-size: 100%;
-                    background-repeat: no-repeat;
-
-                    &:not(:first-child) {
-                        margin-right: 10px;
-                    }
-                }
-                & > input[id="rating-5"]:checked ~ label {
-                    background-image: url("../img/posts/starActive.svg");
-                }
-
-                & > input[id="rating-5"]:not(:checked) ~ label:hover,
-                & > input[id="rating-5"]:not(:checked) ~ label:hover ~ label {
-                    background-image: url("../img/posts/atarDefolt.svg");
-                }
-            }
+        .set-condition {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 0;
+            margin-left: -5px;
         }
+
+        .set-condition__stars-container {
+            @media (max-width: 767px) {
+                margin-bottom: 20px;
+            }
+            width: 160px;
+            height: 24px;
+            margin-bottom: 30px;
+            background-image: url("../img/posts/satarDefolt.svg");
+            background-size: 33px 24px;
+            background-repeat: repeat-x;
+            position: relative;
+            z-index: 0;
+        }
+
+        .set-condition__result-container {
+            margin-bottom: 5px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 20px;
+        }
+
+        .set-condition__stars-container input {
+            display: none;
+        }
+
+        .set-condition__stars-container label {
+            height: 24px;
+            background-size: 33px 24px;
+            background-repeat: repeat-x;
+            position: absolute;
+            left: 0;
+            top: 0;
+            cursor: pointer;
+        }
+
+        .set-condition__stars-container label:nth-of-type(1) {
+            width: 33px;
+            z-index: 5;
+        }
+
+        .set-condition__stars-container label:nth-of-type(2) {
+            width: 66px;
+            z-index: 4;
+        }
+
+        .set-condition__stars-container label:nth-of-type(3) {
+            width: 99px;
+            z-index: 3;
+        }
+
+        .set-condition__stars-container label:nth-of-type(4) {
+            width: 132px;
+            z-index: 2;
+        }
+
+        .set-condition__stars-container label:nth-of-type(5) {
+            width: 165px;
+            z-index: 1;
+        }
+
+        .set-condition__stars-container label:hover,
+        .set-condition__stars-container input:checked + label {
+            background-image: url("../img/posts/starActive.svg");
+            transition: all 0.4s ease-out;
+        }
+
         .feedback__star {
+            @media (max-width: 767px) {
+                margin-bottom: 15px;
+            }
             font-family: Consolas;
             font-size: 18px;
             font-weight: 700;
+            margin-bottom: 10px;
         }
         .feedback__message {
             .feedback__title {
+                @media (max-width: 767px) {
+                    font-size: 16px;
+                    margin-bottom: 10px;
+                }
                 font-family: Consolas;
                 font-size: 18px;
                 font-weight: 700;
@@ -68,7 +107,7 @@
                 flex-wrap: wrap;
                 row-gap: 20px;
                 .column {
-                    @media (max-width: 491px) {
+                    @media (max-width: 767px) {
                         width: 100%;
                     }
                     height: 56px;
@@ -76,8 +115,7 @@
 
                     input {
                         min-width: 226px;
-                        height: 56px;
-                        padding: 26px 0px 9px 20px;
+                        padding: 26px 20px 9px 20px;
                         border-radius: 6px;
                         outline: none;
                         background-color: #ffffff;
@@ -90,13 +128,13 @@
                     }
                     input:focus ~ label,
                     input:valid ~ label {
-                        transform: translateY(-8px);
+                        transform: translateY(-12px);
                         font-size: 14px;
                     }
                     label {
                         pointer-events: none;
                         position: absolute;
-                        top: 18px;
+                        top: 20px;
                         left: 20px;
                         color: rgba(119, 119, 119, 1);
                         pointer-events: none;
@@ -122,23 +160,23 @@
                     font-family: ArialMT;
                     font-size: 14px;
                     background: rgba(255, 255, 255, 1);
-                    border: 1px solid rgba(255, 255, 255, 1);
-                    color: rgba(119, 119, 119, 1);
+                    border: 2px solid rgba(127, 127, 127, 1);
+                    color: rgba(34, 34, 34, 1);
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
                     padding: 18px 20px;
                     border-radius: 6px;
                     cursor: pointer;
-                    transition: background 0.3s;
+                }
+                .selected {
+                    color: rgba(119, 119, 119, 1);
                 }
 
                 .select-clicked {
                     color: rgba(34, 34, 34, 1);
                 }
-                .select:hover {
-                    border: 1px solid rgba(127, 127, 127, 1);
-                }
+
                 .caret {
                     width: 10px;
                     height: 6px;
@@ -174,6 +212,17 @@
 
                 .active {
                     background: rgba(237, 237, 237, 1);
+                    position: relative;
+                    color: black;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        background: rgba(0, 98, 255, 1);
+                        width: 7px;
+                        height: 100%;
+                        left: 0;
+                        top: 0;
+                    }
                 }
 
                 .menu-open {
@@ -193,6 +242,10 @@
                         padding: 15px 19px;
                         border-radius: 6px;
                         color: rgba(119, 119, 119, 1);
+                        font-family: ArialMT;
+                        font-size: 14px;
+                        line-height: 14px;
+                        letter-spacing: 0px;
                     }
                     .input__field:focus {
                         outline: none;
