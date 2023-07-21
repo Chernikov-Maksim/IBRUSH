@@ -128,7 +128,7 @@
                     }
                     input:focus ~ label,
                     input:valid ~ label {
-                        transform: translateY(-12px);
+                        transform: translateY(-10px);
                         font-size: 14px;
                     }
                     label {

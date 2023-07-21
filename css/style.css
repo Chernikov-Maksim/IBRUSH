@@ -677,9 +677,9 @@ body {
 }
 .feedback .container__feedback .feedback__message .form .column input:focus ~ label,
 .feedback .container__feedback .feedback__message .form .column input:valid ~ label {
-  -webkit-transform: translateY(-12px);
-      -ms-transform: translateY(-12px);
-          transform: translateY(-12px);
+  -webkit-transform: translateY(-10px);
+      -ms-transform: translateY(-10px);
+          transform: translateY(-10px);
   font-size: 14px;
 }
 .feedback .container__feedback .feedback__message .form .column label {
