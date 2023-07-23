@@ -675,8 +675,8 @@ body {
   color: rgb(34, 34, 34);
   border: 1px solid rgb(230, 230, 230);
 }
-.feedback .container__feedback .feedback__message .form .column input:focus ~ label,
-.feedback .container__feedback .feedback__message .form .column input:valid ~ label {
+.feedback .container__feedback .feedback__message .form .column input:focus + label,
+.feedback .container__feedback .feedback__message .form .column input:valid + label {
   -webkit-transform: translateY(-10px);
       -ms-transform: translateY(-10px);
           transform: translateY(-10px);
@@ -695,12 +695,6 @@ body {
   font-family: ArialMT;
   font-size: 14px;
 }
-.feedback .container__feedback .feedback__message .form .column .underline {
-  position: absolute;
-  height: 2px;
-  width: 100%;
-  bottom: 0;
-}
 .feedback .container__feedback .feedback__message .form .dropdown {
   min-width: 226px;
   position: relative;
@@ -715,7 +709,6 @@ body {
   font-size: 14px;
   background: rgb(255, 255, 255);
   border: 2px solid rgb(127, 127, 127);
-  color: rgb(34, 34, 34);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -728,8 +721,6 @@ body {
   padding: 18px 20px;
   border-radius: 6px;
   cursor: pointer;
-}
-.feedback .container__feedback .feedback__message .form .selected {
   color: rgb(119, 119, 119);
 }
 .feedback .container__feedback .feedback__message .form .select-clicked {
@@ -779,7 +770,7 @@ body {
 .feedback .container__feedback .feedback__message .form .active {
   background: rgb(237, 237, 237);
   position: relative;
-  color: black;
+  color: rgb(34, 34, 34);
 }
 .feedback .container__feedback .feedback__message .form .active::before {
   content: "";
@@ -809,11 +800,26 @@ body {
   width: 100%;
   padding: 15px 19px;
   border-radius: 6px;
-  color: rgb(119, 119, 119);
   font-family: ArialMT;
   font-size: 14px;
   line-height: 14px;
   letter-spacing: 0px;
+  color: rgb(34, 34, 34);
+}
+.feedback .container__feedback .feedback__message .form .column-area .input__field::-webkit-input-placeholder {
+  color: rgb(119, 119, 119);
+}
+.feedback .container__feedback .feedback__message .form .column-area .input__field::-moz-placeholder {
+  color: rgb(119, 119, 119);
+}
+.feedback .container__feedback .feedback__message .form .column-area .input__field:-ms-input-placeholder {
+  color: rgb(119, 119, 119);
+}
+.feedback .container__feedback .feedback__message .form .column-area .input__field::-ms-input-placeholder {
+  color: rgb(119, 119, 119);
+}
+.feedback .container__feedback .feedback__message .form .column-area .input__field::placeholder {
+  color: rgb(119, 119, 119);
 }
 .feedback .container__feedback .feedback__message .form .column-area .input__field:focus {
   outline: none;
