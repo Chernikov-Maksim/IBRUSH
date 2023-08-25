@@ -1,4 +1,8 @@
 .posts {
+    background-image: url(../img/advertisement/mobileBooks.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     .container__posts {
         @media (max-width: 767px) {
             padding: 36px 0px 66px 0px;

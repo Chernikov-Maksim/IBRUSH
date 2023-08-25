@@ -72,7 +72,6 @@ select {
         -ms-transform: scale(1.1);
             transform: scale(1.1);
     -webkit-transition-duration: 0.2s;
-         -o-transition-duration: 0.2s;
             transition-duration: 0.2s;
   }
 }
@@ -279,8 +278,7 @@ body {
   text-align: left;
   color: rgb(32, 35, 38);
   margin-bottom: 50px;
-  -o-text-overflow: ellipsis;
-     text-overflow: ellipsis;
+  text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
   width: 470px;
@@ -450,6 +448,12 @@ body {
   }
 }
 
+.posts {
+  background-image: url(../img/advertisement/mobileBooks.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 .posts .container__posts {
   padding: 60px 0px 75px 0px;
 }
@@ -607,7 +611,6 @@ body {
 .feedback .container__feedback .set-condition__stars-container input:checked + label {
   background-image: url("../img/posts/starActive.svg");
   -webkit-transition: all 0.4s ease-out;
-  -o-transition: all 0.4s ease-out;
   transition: all 0.4s ease-out;
 }
 .feedback .container__feedback .feedback__star {
@@ -690,7 +693,6 @@ body {
   color: rgb(119, 119, 119);
   pointer-events: none;
   -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   font-family: ArialMT;
   font-size: 14px;
@@ -730,7 +732,6 @@ body {
   width: 10px;
   height: 6px;
   -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
   transition: 0.3s;
 }
 .feedback .container__feedback .feedback__message .form .caret-rotate {
@@ -753,7 +754,6 @@ body {
   opacity: 0;
   display: none;
   -webkit-transition: 0.2s;
-  -o-transition: 0.2s;
   transition: 0.2s;
   z-index: 2;
 }
@@ -785,7 +785,6 @@ body {
   display: block;
   opacity: 1;
   -webkit-transition: 0.2s;
-  -o-transition: 0.2s;
   transition: 0.2s;
 }
 .feedback .container__feedback .feedback__message .form .column-area {
@@ -852,7 +851,6 @@ body {
   letter-spacing: 0.7px;
   cursor: pointer;
   -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .feedback .container__feedback .feedback__message .form .column__btn .btn:hover {
